@@ -2,11 +2,11 @@ import React,{Component} from 'react'
 import './musiclistitem.less'
 class MusicListItem extends React.Component{
   render(){
-    let musicItem= this.props.musicItem;
+    let item = this.props.data;
     return (
-        <li className={`components-musiclistitem row ${this.props.focus ?'focus':''}`}>
-          <p><strong>{musicItem.title}-{musicItem.artist}</strong></p>
-          <p className="-col-auto delete"></p>
+        <li className={`row components-listitem${this.props.focus ? ' focus' : ''}`}>
+            <p><span className="bold">{item.title}</span>  -  {item.artist}</p>
+            <p className="-col-auto delete"></p>
         </li>
     );
   }

@@ -6,24 +6,20 @@ class MusicList extends React.Component{
     super();
   }
   render(){
-     let listEle = null;
-     listELe = this.props.musicList.map((item)=>{
-      console.log(item.title+"--"+item.artist);
-      return (
-        <MusicListItem
-          focus={item===this.props.currentMusitItem}
-          key={item.id}
-          musicItem={item}
-        >
-          {item.title}
-        </MusicListItem>
-      );
-    });
-    return (
-      <ul>
-        { listEle }
-      </ul>
-    );
+    let Items = this.props.musicList.map((item) => {
+       return (
+         <MusicListItem
+           key={item.id}
+           data={item}
+          focus={this.props.currentMusitItem === item}
+         ></MusicListItem>
+       );
+     });
+   return (
+       <ul>
+           { Items }
+       </ul>
+   );
   }
 }
 export default MusicList;
